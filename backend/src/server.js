@@ -19,7 +19,7 @@ app.use(express.json());  // permite ler JSON enviado no corpo das requisições
 
 // Rota simples só para confirmar que a API está no ar
 app.get('/', (req, res) => {
-  res.json({ mensagem: 'API do Sistema de Clubes do IFMS está funcionando.' });
+    res.json({ mensagem: 'API do Sistema de Clubes do IFMS está funcionando.' });
 });
 
 // Todas as rotas de clube ficam sob o prefixo /api/clubes
@@ -28,5 +28,5 @@ app.use('/api/clubes', clubesRoutes);
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
 });

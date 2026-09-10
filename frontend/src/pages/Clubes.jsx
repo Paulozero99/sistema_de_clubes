@@ -11,92 +11,97 @@
 
 import { useEffect, useState } from 'react';
 import {
-  buscarClubes,
-  criarClube,
-  atualizarClube,
-  excluirClube,
+    buscarClubes,
+    criarClube,
+    atualizarClube,
+    excluirClube,
 } from '../services/api.js';
 import ClubeForm from '../components/ClubeForm.jsx';
 import ClubeList from '../components/ClubeList.jsx';
 
 function Clubes() {
-  const [clubes, setClubes] = useState([]);
-  const [carregando, setCarregando] = useState(true);
-  const [erro, setErro] = useState('');
-  const [clubeEmEdicao, setClubeEmEdicao] = useState(null);
+    const [clubes, setClubes] = useState([]);
+    const [carregando, setCarregando] = useState(true);
+    const [erro, setErro] = useState('');
+    const [clubeEmEdicao, setClubeEmEdicao] = useState(null);
 
-  // Busca os clubes uma vez, quando o componente é montado.
-  useEffect(() => {
-    carregarClubes();
-  }, []);
+    // Busca os clubes uma vez, quando o componente é montado.
+    useEffect(() => {
+        carregarClubes();
+    }, []);
 
-  async function carregarClubes() {
-    try {
-      setCarregando(true);
-      setErro('');
-      const dados = await buscarClubes();
-      setClubes(dados);
-    } catch (erroCapturado) {
-      setErro(erroCapturado.message);
-    } finally {
-      setCarregando(false);
+    async function carregarClubes() {
+        try{
+            setCarregando(true);
+            setErro('');
+            const dados = await buscarClubes();
+            setClubes(dados);
+        } 
+        catch(erroCapturado){
+            setErro(erroCapturado.message);
+        } 
+        finally{
+            setCarregando(false);
+        }
     }
-  }
 
-  async function aoSalvar(dadosForm) {
-    try {
-      setErro('');
+    async function aoSalvar(dadosForm) {
+        try {
+            setErro('');
 
-      if (clubeEmEdicao) {
-        await atualizarClube(clubeEmEdicao.id, dadosForm);
-      } else {
-        await criarClube(dadosForm);
-      }
+            if(clubeEmEdicao){
+                await atualizarClube(clubeEmEdicao.id, dadosForm);
+            } 
+            else{
+                await criarClube(dadosForm);
+            }
 
-      setClubeEmEdicao(null);
-      await carregarClubes(); // recarrega a lista com os dados atualizados
-    } catch (erroCapturado) {
-      setErro(erroCapturado.message);
+            setClubeEmEdicao(null);
+            await carregarClubes(); // recarrega a lista com os dados atualizados
+        } 
+        catch(erroCapturado){
+            setErro(erroCapturado.message);
+        }
     }
-  }
 
-  async function aoExcluir(id) {
-    const confirmar = window.confirm('Tem certeza que deseja excluir este clube?');
-    if (!confirmar) return;
+    async function aoExcluir(id){
+        const confirmar = window.confirm('Tem certeza que deseja excluir este clube?');
+        if (!confirmar) return;
 
-    try {
-      setErro('');
-      await excluirClube(id);
-      await carregarClubes();
-    } catch (erroCapturado) {
-      setErro(erroCapturado.message);
+        try{
+            setErro('');
+            await excluirClube(id);
+            await carregarClubes();
+        } 
+        catch(erroCapturado){
+            setErro(erroCapturado.message);
+        }
     }
-  }
 
-  function aoEditar(clube) {
-    setClubeEmEdicao(clube);
-  }
+    function aoEditar(clube) {
+        setClubeEmEdicao(clube);
+    }
 
-  function aoCancelarEdicao() {
-    setClubeEmEdicao(null);
-  }
+    function aoCancelarEdicao() {
+        setClubeEmEdicao(null);
+    }
 
-  return (
-    <section>
-      <ClubeForm
-        clubeEmEdicao={clubeEmEdicao}
-        aoSalvar={aoSalvar}
-        aoCancelar={aoCancelarEdicao}
-      />
+    return (
+        <section>
+            <ClubeForm
+                clubeEmEdicao={clubeEmEdicao}
+                aoSalvar={aoSalvar}
+                aoCancelar={aoCancelarEdicao}
+            />
 
-      {erro && <p className="erro">{erro}</p>}
-      {carregando && <p className="carregando">Carregando clubes...</p>}
+            {erro && <p className="erro">{erro}</p>}
+            {carregando && <p className="carregando">Carregando clubes...</p>}
 
-      {!carregando && (
-        <ClubeList clubes={clubes} aoEditar={aoEditar} aoExcluir={aoExcluir} />
-      )}
-    </section>
-  );
+            {!carregando && (
+                <ClubeList clubes={clubes} aoEditar={aoEditar} aoExcluir={aoExcluir} />
+            )}
+        </section>
+    );
 }
 
 export default Clubes;

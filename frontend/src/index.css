@@ -1,150 +1,150 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: system-ui, Arial, sans-serif;
-  background-color: #f4f5f7;
-  color: #1f2933;
+    margin: 0;
+    font-family: system-ui, Arial, sans-serif;
+    background-color: #f4f5f7;
+    color: #1f2933;
 }
 
 .container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px;
 }
 
 .cabecalho h1 {
-  font-size: 1.6rem;
-  margin-bottom: 24px;
+    font-size: 1.6rem;
+    margin-bottom: 24px;
 }
 
 .erro {
-  background-color: #fdecea;
-  color: #b3261e;
-  padding: 10px 14px;
-  border-radius: 6px;
-  margin-bottom: 16px;
+    background-color: #fdecea;
+    color: #b3261e;
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin-bottom: 16px;
 }
 
 .carregando {
-  color: #52606d;
-  margin-bottom: 16px;
+    color: #52606d;
+    margin-bottom: 16px;
 }
 
 /* ---- Formulário ---- */
 .form-clube {
-  background: #fff;
-  border: 1px solid #e2e5e9;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 24px;
+    background: #fff;
+    border: 1px solid #e2e5e9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
 }
 
 .form-clube h2 {
-  margin-top: 0;
-  font-size: 1.1rem;
+    margin-top: 0;
+    font-size: 1.1rem;
 }
 
 .campo {
-  margin-bottom: 12px;
-  display: flex;
-  flex-direction: column;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
 }
 
 .campo label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 4px;
 }
 
 .campo input,
 .campo textarea {
-  padding: 8px 10px;
-  border: 1px solid #cbd2d9;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  font-family: inherit;
+    padding: 8px 10px;
+    border: 1px solid #cbd2d9;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
 }
 
 .acoes-form {
-  display: flex;
-  gap: 10px;
-  margin-top: 8px;
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
 }
 
 button {
-  cursor: pointer;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 14px;
-  font-size: 0.9rem;
-  font-weight: 600;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 .botao-primario {
-  background-color: #2f6feb;
-  color: #fff;
+    background-color: #2f6feb;
+    color: #fff;
 }
 
 .botao-secundario {
-  background-color: #e2e5e9;
-  color: #1f2933;
+    background-color: #e2e5e9;
+    color: #1f2933;
 }
 
 .botao-perigo {
-  background-color: #d64545;
-  color: #fff;
+    background-color: #d64545;
+    color: #fff;
 }
 
 /* ---- Lista de clubes ---- */
 .lista-clubes {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
 }
 
 .card-clube {
-  background: #fff;
-  border: 1px solid #e2e5e9;
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+    background: #fff;
+    border: 1px solid #e2e5e9;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-clube img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
 }
 
 .card-clube-corpo {
-  padding: 14px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+    padding: 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-clube-corpo h3 {
-  margin: 0 0 6px 0;
+    margin: 0 0 6px 0;
 }
 
 .card-clube-corpo p {
-  margin: 0 0 8px 0;
-  font-size: 0.9rem;
-  color: #3e4c59;
-  flex: 1;
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
+    color: #3e4c59;
+    flex: 1;
 }
 
 .presidente {
-  font-size: 0.8rem;
-  color: #616e7c;
-  margin-bottom: 10px;
+    font-size: 0.8rem;
+    color: #616e7c;
+    margin-bottom: 10px;
 }
 
 .card-clube-acoes {
-  display: flex;
-  gap: 8px;
+    display: flex;
+    gap: 8px;
 }

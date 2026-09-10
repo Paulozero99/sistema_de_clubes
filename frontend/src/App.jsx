@@ -7,17 +7,15 @@
 
 import Clubes from './pages/Clubes.jsx';
 
-function App() {
-  return (
-    <div className="container">
-      <header className="cabecalho">
-        <h1>Clubes do IFMS - Campus Nova Andradina</h1>
-      </header>
-      <main>
-        <Clubes />
-      </main>
-    </div>
-  );
+export default function App(){
+    return(
+        <div className="container">
+            <header className="cabecalho">
+                <h1>Clubes do IFMS - Campus Nova Andradina</h1>
+            </header>
+            <main>
+                <Clubes />
+            </main>
+        </div>
+    );
 }
-
-export default App;

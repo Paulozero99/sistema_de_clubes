@@ -4,13 +4,13 @@
 // controller cada uma chama. A rota não sabe nada de SQL — ela
 // só "aponta" a requisição para o controller correto.
 
-import { Router } from 'express';
+import {Router} from 'express';
 import {
-  listarClubes,
-  buscarClube,
-  criarClube,
-  atualizarClube,
-  excluirClube,
+    listarClubes,
+    buscarClube,
+    criarClube,
+    atualizarClube,
+    excluirClube,
 } from '../controllers/clubes.controller.js';
 
 const router = Router();
